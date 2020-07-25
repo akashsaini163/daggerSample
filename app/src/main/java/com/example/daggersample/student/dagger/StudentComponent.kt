@@ -7,7 +7,7 @@ import dagger.Component
 /**
  * Created by Akash Saini on 13/07/20.
  */
-@Component()
+@Component(modules = [AddressModule::class, RecordModule::class])
 interface StudentComponent {
     fun getStudent(): Student
 

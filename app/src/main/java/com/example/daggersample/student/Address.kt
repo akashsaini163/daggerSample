@@ -6,7 +6,7 @@ import javax.inject.Named
 /**
  * Created by Akash Saini on 13/07/20.
  */
-class Address @Inject constructor() {
+class Address {
 
     fun getAddress(): String {
         return "Indra coloney, Alwar, Rajasthan (301001)"
