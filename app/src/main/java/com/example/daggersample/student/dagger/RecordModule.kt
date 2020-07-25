@@ -1,5 +1,6 @@
 package com.example.daggersample.student.dagger
 
+import com.example.daggersample.ActivityScope
 import com.example.daggersample.student.IRecord
 import com.example.daggersample.student.Record
 import dagger.Binds

@@ -3,6 +3,7 @@ package com.example.daggersample.student
 import com.example.daggersample.ActivityScope
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 /**
  * Created by Akash Saini on 25/07/20.
@@ -11,7 +12,7 @@ import dagger.Provides
 @Module
 object SchoolModule {
 
-    @ActivityScope
+    @Singleton
     @JvmStatic
     @Provides
     fun getSchool(): School {

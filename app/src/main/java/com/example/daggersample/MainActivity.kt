@@ -13,10 +13,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val studentComponent = DaggerStudentComponent.factory().getStudentComponent(
-                "alwar",
-                301001,
-                "rajasthan",
-                AddressModule()
+            "alwar",
+            301001,
+            "rajasthan",
+            AddressModule(),
+            (application as MyApplication).appComponent
         )
         studentComponent.inject(this)
         student.getStudentRecord()

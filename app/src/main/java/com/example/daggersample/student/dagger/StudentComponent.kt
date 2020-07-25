@@ -1,6 +1,7 @@
 package com.example.daggersample.student.dagger
 
 import com.example.daggersample.ActivityScope
+import com.example.daggersample.AppComponent
 import com.example.daggersample.MainActivity
 import com.example.daggersample.student.SchoolModule
 import com.example.daggersample.student.Student
@@ -13,7 +14,10 @@ import javax.inject.Named
  */
 
 @ActivityScope
-@Component(modules = [AddressModule::class, RecordModule::class, SchoolModule::class])
+@Component(
+    dependencies = [AppComponent::class],
+    modules = [AddressModule::class, RecordModule::class]
+)
 interface StudentComponent {
     fun getStudent(): Student
 
@@ -26,7 +30,8 @@ interface StudentComponent {
             @BindsInstance @Named("city") city: String,
             @BindsInstance @Named("pincode") pinCode: Int,
             @BindsInstance @Named("state") state: String,
-            addressModule: AddressModule
+            addressModule: AddressModule,
+            appComponent: AppComponent
         ): StudentComponent
     }
 }
