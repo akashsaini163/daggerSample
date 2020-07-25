@@ -6,10 +6,10 @@ import javax.inject.Named
 /**
  * Created by Akash Saini on 13/07/20.
  */
-class Address {
+class Address(val city: String, val pinCode: Int, val state: String) {
 
     fun getAddress(): String {
-        return "Indra coloney, Alwar, Rajasthan (301001)"
+        return "Indra coloney, $city, $state ($pinCode)"
     }
 }
 

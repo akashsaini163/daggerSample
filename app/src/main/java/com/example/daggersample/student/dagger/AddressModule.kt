@@ -9,11 +9,10 @@ import dagger.Provides
  */
 
 @Module
-object AddressModule {
+class AddressModule(val city: String, val pinCode: Int, val state: String) {
 
-    @JvmStatic
     @Provides
     fun getAddress(): Address {
-        return Address()
+        return Address(city, pinCode, state)
     }
 }
