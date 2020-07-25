@@ -7,6 +7,7 @@ import com.example.daggersample.student.SchoolModule
 import com.example.daggersample.student.Student
 import dagger.BindsInstance
 import dagger.Component
+import dagger.Subcomponent
 import javax.inject.Named
 
 /**
@@ -14,8 +15,7 @@ import javax.inject.Named
  */
 
 @ActivityScope
-@Component(
-    dependencies = [AppComponent::class],
+@Subcomponent(
     modules = [AddressModule::class, RecordModule::class]
 )
 interface StudentComponent {
@@ -23,15 +23,14 @@ interface StudentComponent {
 
     fun inject(activity: MainActivity)
 
-    @Component.Factory
+    @Subcomponent.Factory
     interface Factory {
 
         fun getStudentComponent(
             @BindsInstance @Named("city") city: String,
             @BindsInstance @Named("pincode") pinCode: Int,
             @BindsInstance @Named("state") state: String,
-            addressModule: AddressModule,
-            appComponent: AppComponent
+            addressModule: AddressModule
         ): StudentComponent
     }
 }

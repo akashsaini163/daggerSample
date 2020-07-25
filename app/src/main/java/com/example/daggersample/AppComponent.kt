@@ -2,6 +2,7 @@ package com.example.daggersample
 
 import com.example.daggersample.student.School
 import com.example.daggersample.student.SchoolModule
+import com.example.daggersample.student.dagger.StudentComponent
 import dagger.Component
 import javax.inject.Singleton
 
@@ -12,5 +13,5 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [SchoolModule::class])
 interface AppComponent {
-    fun getSchool(): School
+    fun getStudentComponentFactory(): StudentComponent.Factory
 }
