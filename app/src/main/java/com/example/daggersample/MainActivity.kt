@@ -12,8 +12,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val studentComponent = DaggerStudentComponent.builder().addressModule(
-                AddressModule("alwar", 301001, "Rajasthan")).build()
+        val studentComponent = DaggerStudentComponent.factory().getStudentComponent(
+                "alwar",
+                301001,
+                "rajasthan",
+                AddressModule()
+        )
         studentComponent.inject(this)
         student.getStudentRecord()
     }
