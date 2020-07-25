@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         )
         studentComponent.inject(this)
         student.getStudentRecord()
+
+        studentComponent.getStudent().getStudentRecord()
     }
 
     @Inject
