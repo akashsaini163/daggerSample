@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.daggersample.student.Student
 import com.example.daggersample.student.dagger.DaggerStudentComponent
 import javax.inject.Inject
+import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,4 +23,7 @@ class MainActivity : AppCompatActivity() {
     @Inject
     fun init() {
     }
+
+
 }
+
