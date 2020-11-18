@@ -12,6 +12,7 @@ import dagger.Module
 @Module
 abstract class RecordModule {
 
+    @ActivityScope
     @Binds
     abstract fun bindRecord(record: Record): IRecord
 }
