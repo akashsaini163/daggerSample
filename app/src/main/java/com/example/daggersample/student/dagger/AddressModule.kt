@@ -10,14 +10,11 @@ import javax.inject.Named
  */
 
 @Module
-class AddressModule {
+object AddressModule {
 
+    @JvmStatic
     @Provides
-    fun getAddress(
-        @Named("city") city: String,
-        @Named("pincode") pinCode: Int,
-        @Named("state") state: String
-    ): Address {
-        return Address(city, pinCode, state)
+    fun getAddress(): Address {
+        return Address()
     }
 }

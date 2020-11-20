@@ -19,21 +19,7 @@ import javax.inject.Named
     modules = [AddressModule::class, RecordModule::class]
 )
 interface StudentComponent {
-    fun getStudent(): Student
-
     fun inject(activity: MainActivity)
-
-    @Component.Factory
-    interface Factory {
-
-        fun getStudentComponent(
-            @BindsInstance @Named("city") city: String,
-            @BindsInstance @Named("pincode") pinCode: Int,
-            @BindsInstance @Named("state") state: String,
-            addressModule: AddressModule,
-            appComponent: AppComponent
-        ): StudentComponent
-    }
 }
 
 
