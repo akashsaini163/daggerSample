@@ -6,14 +6,10 @@ import javax.inject.Named
 /**
  * Created by Akash Saini on 13/07/20.
  */
-class Address @Inject constructor(
-    @Named("city") val city: String,
-    @Named("pincode") val pinCode: Int,
-    @Named("state") val state: String
-) {
+class Address @Inject constructor() {
 
     fun getAddress(): String {
-        return "Indra coloney, $city, $state ($pinCode)"
+        return "Indra coloney"
     }
 }
 

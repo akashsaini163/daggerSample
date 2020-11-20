@@ -13,5 +13,5 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [SchoolModule::class])
 interface AppComponent {
-    fun getStudentComponentFactory(): StudentComponent.Factory
+    fun getStudentComponent(): StudentComponent
 }

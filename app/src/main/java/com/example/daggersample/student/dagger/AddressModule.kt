@@ -13,11 +13,7 @@ import javax.inject.Named
 class AddressModule {
 
     @Provides
-    fun getAddress(
-        @Named("city") city: String,
-        @Named("pincode") pinCode: Int,
-        @Named("state") state: String
-    ): Address {
-        return Address(city, pinCode, state)
+    fun getAddress(): Address {
+        return Address()
     }
 }

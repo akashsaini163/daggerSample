@@ -12,17 +12,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val studentComponent =
-            (application as MyApplication).appComponent.getStudentComponentFactory()
-                .getStudentComponent(
-                    "alwar",
-                    301001,
-                    "rajasthan",
-                    AddressModule()
-                )
+            (application as MyApplication).appComponent.getStudentComponent()
         studentComponent.inject(this)
         student.getStudentRecord()
-
-        studentComponent.getStudent().getStudentRecord()
     }
 
     @Inject
