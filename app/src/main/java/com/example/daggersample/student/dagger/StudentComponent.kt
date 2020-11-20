@@ -9,8 +9,6 @@ import dagger.Component
  */
 @Component(modules = [AddressModule::class, RecordModule::class])
 interface StudentComponent {
-    fun getStudent(): Student
-
     fun inject(activity: MainActivity)
 }
 
